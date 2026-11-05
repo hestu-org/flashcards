@@ -1,0 +1,1373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'none'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Flashcards</title>
+<meta name="apple-mobile-web-app-title" content="Flashcards">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<style>
+:root{
+  --bg:#f2f2f7; --cell:#fff; --cell2:#e9e9ee; --text:#000; --text2:rgba(60,60,67,.62); --text3:rgba(60,60,67,.32);
+  --sep:rgba(60,60,67,.22); --fill:rgba(118,118,128,.12); --bar:rgba(246,246,248,.88);
+  --blue:#007aff; --red:#ff3b30; --orange:#ff9500; --green:#34c759; --indigo:#5856d6; --gray:#8e8e93;
+  --shadow:0 1px 2px rgba(0,0,0,.05),0 8px 24px rgba(0,0,0,.06);
+  --sat:env(safe-area-inset-top,0px); --sab:env(safe-area-inset-bottom,0px);
+  --sal:env(safe-area-inset-left,0px); --sar:env(safe-area-inset-right,0px);
+  --gutter-l:max(16px,var(--sal)); --gutter-r:max(16px,var(--sar));
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#000; --cell:#1c1c1e; --cell2:#2c2c2e; --text:#fff; --text2:rgba(235,235,245,.62); --text3:rgba(235,235,245,.3);
+  --sep:rgba(84,84,88,.55); --fill:rgba(118,118,128,.24); --bar:rgba(22,22,24,.86);
+  --blue:#0a84ff; --red:#ff453a; --orange:#ff9f0a; --green:#30d158; --indigo:#5e5ce6; --gray:#98989d;
+  --shadow:none;
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--bg)}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font:17px/1.35 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",system-ui,sans-serif;
+  -webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;overscroll-behavior-y:none}
+input,textarea,select,.selectable{-webkit-user-select:text;user-select:text;-webkit-touch-callout:default}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;touch-action:manipulation;text-align:inherit}
+button:disabled{cursor:default;opacity:.4}
+svg.i{width:22px;height:22px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+:focus{outline:none}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:8px}
+
+/* nav bar */
+.nav{position:sticky;top:0;z-index:20;padding-top:var(--sat);background:var(--bar);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:.5px solid var(--sep)}
+.nav.flat{border-bottom-color:transparent;background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none}
+.nav-in{height:44px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 max(8px,var(--sal)) 0 max(8px,var(--sar))}
+.nav-t{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:56vw;text-align:center}
+.nav-l{justify-self:start;display:flex}.nav-r{justify-self:end;display:flex;gap:4px}
+.navbtn{display:inline-flex;align-items:center;gap:4px;min-height:44px;min-width:44px;padding:0 8px;color:var(--blue);font-size:17px;border-radius:10px}
+.navbtn.back{padding-left:0}.navbtn.back svg{width:26px;height:26px;stroke-width:2.4;margin-right:-2px}
+.navbtn:active{opacity:.5}
+.content{padding:8px var(--gutter-r) calc(96px + var(--sab)) var(--gutter-l);max-width:720px;margin:0 auto}
+h1.large{font-size:34px;line-height:1.2;font-weight:700;letter-spacing:.2px;margin:2px 0 14px}
+
+/* tab bar */
+#tabbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:space-around;padding:4px var(--sar) var(--sab) var(--sal);background:var(--bar);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-top:.5px solid var(--sep)}
+#tabbar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;min-height:49px;justify-content:center;color:var(--gray);font-size:10.5px;font-weight:500}
+#tabbar button svg{width:26px;height:26px;stroke-width:1.8}
+#tabbar button.on{color:var(--blue)}
+body.studying #tabbar{display:none}
+
+/* grouped lists */
+.sh{font-size:13px;text-transform:uppercase;letter-spacing:.3px;color:var(--text2);margin:24px 16px 7px}
+.foot{font-size:13px;color:var(--text2);margin:7px 16px 0;line-height:1.4}
+.list{background:var(--cell);border-radius:12px;overflow:hidden}
+.row{position:relative;display:flex;align-items:center;gap:12px;width:100%;min-height:48px;padding:11px 16px;text-align:left}
+.row+.row::before{content:"";position:absolute;top:0;left:16px;right:0;border-top:.5px solid var(--sep)}
+button.row:active,a.row:active{background:var(--cell2)}
+.row-main{flex:1;min-width:0}
+.row-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row-sub{font-size:14px;color:var(--text2);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row-val{color:var(--text2);white-space:nowrap}
+.row .chev{color:var(--text3);width:18px;height:18px;stroke-width:2.6}
+.row.blue{color:var(--blue)}.row.red{color:var(--red)}
+.row input[type=text],.row input[type=number],.row select{border:0;background:none;color:var(--text2);font-size:17px;text-align:right;min-width:0;width:8em;padding:4px 0}
+.row input[type=number]{width:3.5em}
+.row select{width:auto;max-width:58%;-webkit-appearance:none;appearance:none;text-align:right;text-align-last:right;color:var(--text2)}
+.updown{width:15px;height:15px;color:var(--text3);margin-left:-6px;stroke-width:2.4}
+
+/* decks */
+.deck-row{padding:14px 12px 14px 16px;min-height:64px}
+.deck-row .row-title{font-size:18px;font-weight:600}
+.counts{display:flex;gap:6px;flex:none}
+.cnt{display:flex;flex-direction:column;align-items:center;min-width:44px;padding:4px 6px;border-radius:10px;background:var(--fill)}
+.cnt b{font-size:17px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2}
+.cnt small{font-size:11px;color:var(--text2);line-height:1.1}
+.cnt.new b{color:var(--blue)}.cnt.due b{color:var(--green)}.cnt.zero b{color:var(--text3)}
+
+.empty{text-align:center;padding:48px 24px 8px;color:var(--text2)}
+.empty .big{font-size:22px;font-weight:600;color:var(--text);margin:14px 0 6px}
+.empty-art{width:84px;height:84px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.empty-art img{width:100%;height:100%;display:block}
+
+/* buttons */
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;padding:0 18px;border-radius:14px;background:var(--blue);color:#fff;font-weight:600;font-size:17px;text-align:center}
+.btn:active{filter:brightness(.88)}
+.btn.sec{background:var(--fill);color:var(--blue)}
+.btn.small{min-height:40px;width:auto;padding:0 14px;border-radius:10px;font-size:15px}
+.btn.red{background:var(--red)}
+.btn+.btn{margin-top:10px}
+.linkbtn{color:var(--blue);padding:8px;min-height:40px;font-size:15px}
+
+/* banner */
+.banner{background:var(--cell);border-radius:14px;padding:14px 16px;margin-bottom:16px;border-left:4px solid var(--orange);box-shadow:var(--shadow)}
+.banner strong{display:block;margin-bottom:2px}
+.banner-text{font-size:15px;color:var(--text2)}
+.banner-text strong{color:var(--text);font-size:17px}
+.banner-actions{display:flex;gap:6px;align-items:center;margin-top:10px}
+
+/* deck overview */
+.hero{background:var(--cell);border-radius:16px;padding:18px 16px 16px;box-shadow:var(--shadow)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;margin-bottom:16px}
+.stat b{display:block;font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.15}
+.stat span{font-size:13px;color:var(--text2)}
+.stat.new b{color:var(--blue)}.stat.lrn b{color:var(--red)}.stat.rev b{color:var(--green)}
+.stat.zero b{color:var(--text3)}
+.hero-note{font-size:14px;color:var(--text2);text-align:center;margin-top:10px}
+.stepper{display:flex;align-items:center;gap:2px}
+.stepper button{width:40px;height:34px;border-radius:9px;background:var(--fill);color:var(--blue);font-size:22px;font-weight:500;line-height:1}
+.row .stepper input{width:3.2em;text-align:center;color:var(--text);font-variant-numeric:tabular-nums}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;padding:2px;border-radius:10px;background:var(--fill);width:100%}
+.seg button{min-height:34px;border-radius:8px;font-size:14px;font-weight:500;color:var(--text);text-align:center;white-space:nowrap}
+.seg button.on{background:var(--cell);box-shadow:0 1px 3px rgba(0,0,0,.14)}
+@media (prefers-color-scheme:dark){.seg button.on{background:#636366}}
+.row.col{flex-direction:column;align-items:stretch;gap:10px}
+
+/* search */
+.search{position:sticky;top:calc(44px + var(--sat));z-index:10;background:var(--bg);padding:8px 0 10px;margin-top:-8px}
+.search label{display:flex;align-items:center;gap:6px;background:var(--fill);border-radius:10px;padding:0 10px;color:var(--text2)}
+.search input{flex:1;-webkit-appearance:none;appearance:none;border:0;background:none;color:var(--text);font-size:17px;padding:9px 0;min-width:0}
+.search svg{width:18px;height:18px}
+.card-row{align-items:flex-start}
+.card-row .row-title{font-weight:500}
+.card-row .row-sub{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.tag{flex:none;font-size:12px;font-weight:600;padding:3px 8px;border-radius:7px;background:var(--fill);color:var(--text2);margin-top:2px;white-space:nowrap}
+.tag.new{color:var(--blue)}.tag.lrn{color:var(--red)}.tag.due{color:var(--green)}
+
+/* forms */
+.field{display:block;margin-bottom:12px}
+.field>span{display:block;font-size:13px;color:var(--text2);margin:0 4px 5px;text-transform:uppercase;letter-spacing:.3px}
+.field textarea,.field input,.field select{width:100%;border:0;border-radius:12px;background:var(--cell);color:var(--text);font:inherit;font-size:17px;padding:12px 14px}
+.field textarea{resize:vertical;min-height:88px;line-height:1.35}
+.sheet .field textarea,.sheet .field input,.sheet .field select{background:var(--cell)}
+.paste{min-height:140px!important;font-family:ui-monospace,Menlo,monospace!important;font-size:15px!important}
+.filebtn{position:relative;overflow:hidden}
+.filebtn input{position:absolute;inset:0;opacity:0;font-size:200px;cursor:pointer}
+.check{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.switch{position:relative;width:51px;height:31px;flex:none}
+.switch input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;z-index:1}
+.switch i{position:absolute;inset:0;border-radius:31px;background:var(--fill);transition:background .2s}
+.switch i::after{content:"";position:absolute;top:2px;left:2px;width:27px;height:27px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:transform .2s}
+.switch input:checked+i{background:var(--green)}
+.switch input:checked+i::after{transform:translateX(20px)}
+.preview{overflow:auto;-webkit-overflow-scrolling:touch;background:var(--cell);border-radius:12px;max-height:300px}
+.preview table{border-collapse:collapse;font-size:14px;min-width:100%}
+.preview th,.preview td{padding:8px 10px;text-align:left;vertical-align:top;border-bottom:.5px solid var(--sep);max-width:220px;white-space:pre-wrap;overflow-wrap:anywhere}
+.preview th{position:sticky;top:0;background:var(--cell2);font-weight:600;font-size:12px;white-space:nowrap}
+.preview td.f{background:rgba(0,122,255,.10)}.preview td.b{background:rgba(52,199,89,.12)}
+.preview th .pill{display:inline-block;font-size:10px;padding:1px 5px;border-radius:5px;color:#fff;margin-left:4px;vertical-align:1px}
+.pill.f{background:var(--blue)}.pill.b{background:var(--green)}
+.meta-line{font-size:14px;color:var(--text2);margin:10px 4px 0}
+.err{color:var(--red);font-size:15px;margin:8px 4px}
+.result{background:var(--cell);border-radius:16px;padding:22px 18px;text-align:center;box-shadow:var(--shadow)}
+.result .big{font-size:22px;font-weight:700;margin-bottom:4px}
+.result p{color:var(--text2);margin:4px 0 16px}
+
+/* study */
+.study{position:fixed;inset:0;display:flex;flex-direction:column;background:var(--bg)}
+.study-top{padding:var(--sat) max(6px,var(--sar)) 0 max(6px,var(--sal));display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:calc(48px + var(--sat))}
+.study-top .nav-r{justify-self:end}
+.qcounts{display:flex;gap:14px;font-weight:700;font-variant-numeric:tabular-nums;font-size:17px}
+.qcounts span{padding:2px 2px;border-bottom:2px solid transparent;min-width:18px;text-align:center}
+.qcounts .n{color:var(--blue)}.qcounts .l{color:var(--red)}.qcounts .r{color:var(--green)}
+.qcounts .cur{border-bottom-color:currentColor}
+.study-body{flex:1;min-height:0;display:flex;flex-direction:column;overflow:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:6px max(14px,var(--sar)) 10px max(14px,var(--sal))}
+.fcard{flex:1 0 auto;width:100%;max-width:720px;margin:0 auto;background:var(--cell);border-radius:22px;box-shadow:var(--shadow);padding:30px 22px;display:flex;flex-direction:column;justify-content:center;cursor:pointer}
+.fq,.fa{font-size:27px;line-height:1.32;text-align:center;white-space:pre-wrap;overflow-wrap:anywhere;font-weight:500}
+.fa{font-weight:400}
+.fcard.long .fq,.fcard.long .fa{font-size:19px;text-align:left;line-height:1.45}
+.fcard.revealed .fq{color:var(--text2)}
+.fsep{height:1px;background:var(--sep);margin:22px 0}
+.dir-badge{align-self:center;font-size:12px;font-weight:600;color:var(--text2);background:var(--fill);border-radius:7px;padding:3px 8px;margin-bottom:18px}
+.tap-hint{text-align:center;color:var(--text3);font-size:14px;margin-top:26px}
+.study-bottom{padding:8px max(12px,var(--sar)) calc(10px + var(--sab)) max(12px,var(--sal))}
+.study-bottom .btn{min-height:58px;border-radius:16px;font-size:18px;max-width:720px;margin:0 auto}
+.answers{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:720px;margin:0 auto}
+.ans{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:66px;border-radius:16px;background:var(--cell);font-weight:600;font-size:16px}
+.ans small{font-size:13px;font-weight:500;opacity:.85;font-variant-numeric:tabular-nums}
+.ans:active{filter:brightness(.9)}
+.ans.again{color:var(--red);background:color-mix(in srgb,var(--red) 14%,var(--cell))}
+.ans.hard{color:var(--orange);background:color-mix(in srgb,var(--orange) 14%,var(--cell))}
+.ans.good{color:var(--green);background:color-mix(in srgb,var(--green) 15%,var(--cell))}
+.ans.easy{color:var(--blue);background:color-mix(in srgb,var(--blue) 14%,var(--cell))}
+.done{max-width:520px;margin:0 auto;text-align:center;padding:40px 10px}
+.done .big{font-size:26px;font-weight:700;margin:16px 0 6px}
+.done p{color:var(--text2);margin:0 0 22px}
+.done-mark{width:76px;height:76px;margin:0 auto;border-radius:50%;background:color-mix(in srgb,var(--green) 18%,transparent);color:var(--green);display:flex;align-items:center;justify-content:center}
+.done-mark svg{width:40px;height:40px;stroke-width:2.6}
+
+/* modal */
+.overlay{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.42);display:flex;align-items:flex-start;justify-content:center;padding:calc(var(--sat) + 22px) max(12px,var(--sar)) 20px max(12px,var(--sal));overflow:auto;animation:fade .18s ease-out}
+.sheet{width:100%;max-width:540px;background:var(--bg);border-radius:18px;padding:18px 16px 16px;box-shadow:0 20px 60px rgba(0,0,0,.3);animation:pop .22s cubic-bezier(.2,.9,.3,1.2)}
+.sheet-title{font-size:20px;font-weight:700;margin:0 4px 12px}
+.sheet-msg{margin:0 4px 16px;color:var(--text2);line-height:1.45}
+.sheet-actions{display:flex;gap:10px;margin-top:6px}
+.sheet-actions .btn{flex:1;margin:0}
+.sheet-extra{display:flex;justify-content:space-between;gap:8px;margin-top:12px;flex-wrap:wrap}
+.sheet-extra button{color:var(--blue);font-size:15px;padding:8px 4px;min-height:40px}
+.sheet-extra button.red{color:var(--red)}
+.status-line{font-size:13px;color:var(--text2);margin:2px 4px 12px;line-height:1.5}
+@keyframes fade{from{opacity:0}}
+@keyframes pop{from{opacity:0;transform:translateY(-12px) scale(.98)}}
+
+/* toast */
+#toast{position:fixed;left:50%;bottom:calc(72px + var(--sab));transform:translateX(-50%) translateY(20px);z-index:200;max-width:min(92vw,480px);background:rgba(40,40,44,.96);color:#fff;border-radius:14px;padding:12px 16px;font-size:15px;display:flex;gap:12px;align-items:center;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
+#toast button{color:#64d2ff;font-weight:600;padding:4px 2px;white-space:nowrap}
+body.studying #toast{bottom:calc(110px + var(--sab))}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<nav id="tabbar" aria-label="Main">
+  <button data-tab="/"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="8" width="14" height="13" rx="2.5"/><path d="M7 4.5h11.5A2.5 2.5 0 0 1 21 7v10"/></svg>Decks</button>
+  <button data-tab="/import"><svg class="i" viewBox="0 0 24 24"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M4 17v1.5A2.5 2.5 0 0 0 6.5 21h11a2.5 2.5 0 0 0 2.5-2.5V17"/></svg>Import</button>
+  <button data-tab="/settings"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 12h3M11 12h9M4 17h11M19 17h1"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="17" r="2"/></svg>Settings</button>
+</nav>
+<div id="toast" role="status" aria-live="polite"></div>
+<noscript><p style="padding:24px">This app needs JavaScript.</p></noscript>
+<script>
+'use strict';
+/* =====================================================================
+   Flashcards — single-file spaced-repetition app. No network, no tracking.
+   ===================================================================== */
+const VERSION = '1.0.0';
+const MIN = 60000, DAY = 86400000;
+const NEW = 0, LRN = 1, REV = 2, RLN = 3;
+const DEFAULTS = { learn: [1, 10], relearn: [10], grad: 1, easy: 4, rollover: 4 };
+const NEW_PER_DAY = 20, MAX_IVL = 36500, START_EASE = 2.5, MIN_EASE = 1.3;
+const HARD_MULT = 1.2, EASY_BONUS = 1.3, LEARN_AHEAD = 20 * MIN, BACKUP_EVERY = 7 * DAY;
+const ICON_SRC = document.querySelector('link[rel=apple-touch-icon]').href;
+{ const l = document.createElement('link'); l.rel = 'icon'; l.type = 'image/png'; l.href = ICON_SRC; document.head.append(l); }
+
+/* ---------- DOM helpers ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+function h(tag, props, ...kids) {
+  const el = document.createElement(tag);
+  if (props) for (const k in props) {
+    const v = props[k];
+    if (v == null || v === false) continue;
+    if (k === 'class') el.className = v;
+    else if (k === 'style') el.style.cssText = v;
+    else if (k.startsWith('on') && typeof v === 'function') el.addEventListener(k.slice(2), v);
+    else if (k === 'html') el.innerHTML = v; // only ever used with escaped/whitelisted content
+    else if (['value', 'checked', 'selected', 'disabled', 'hidden'].includes(k)) el[k] = v;
+    else el.setAttribute(k, v === true ? '' : v);
+  }
+  for (const c of kids.flat(Infinity)) if (c != null && c !== false) el.append(c.nodeType ? c : String(c));
+  return el;
+}
+const ICONS = {
+  back: '<path d="M15 18l-6-6 6-6"/>',
+  chev: '<path d="M9 18l6-6-6-6"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  backup: '<path d="M12 15V4M7.5 8.5 12 4l4.5 4.5M5 13v5.5A2.5 2.5 0 0 0 7.5 21h9a2.5 2.5 0 0 0 2.5-2.5V13"/>',
+  undo: '<path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/>',
+  edit: '<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/>',
+  close: '<path d="M6 6l12 12M18 6 6 18"/>',
+  search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/>',
+  check: '<path d="m5 12.5 4.5 4.5L19 7.5"/>',
+  updown: '<path d="m8 9.5 4-4 4 4M8 14.5l4 4 4-4"/>',
+};
+function icon(name, cls) {
+  const t = document.createElement('template');
+  t.innerHTML = `<svg class="i ${cls || ''}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name]}</svg>`;
+  return t.content.firstChild;
+}
+
+/* ---------- small utils ---------- */
+const uid = () => (crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2, 10));
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+// Escape everything, then re-allow a few attribute-less formatting tags and plain entities.
+function rich(s) {
+  return esc(s)
+    .replace(/&lt;br\s*\/?&gt;/gi, '\n')
+    .replace(/&lt;(\/?)(b|i|u|em|strong|sub|sup)&gt;/gi, '<$1$2>')
+    .replace(/&amp;(nbsp|amp|lt|gt|quot|#\d{1,6}|#x[0-9a-f]{1,5});/gi, '&$1;');
+}
+const plain = s => String(s).replace(/<br\s*\/?>/gi, ' ').replace(/<\/?(b|i|u|em|strong|sub|sup)>/gi, '').replace(/\s+/g, ' ').trim();
+const norm = s => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
+const clean = s => String(s ?? '').replace(/\r\n?/g, '\n').trim();
+const dupKey = (f, b) => f + '\u0000' + b;
+const round1 = x => String(Math.round(x * 10) / 10);
+function fmtMins(m) {
+  if (m < 1) return '<1m';
+  if (m < 60) return Math.round(m) + 'm';
+  if (m < 1440) return round1(m / 60) + 'h';
+  return fmtDays(m / 1440);
+}
+function fmtDays(d) {
+  if (d < 30) return Math.round(d) + 'd';
+  if (d < 365) return round1(d / 30) + 'mo';
+  return round1(d / 365) + 'y';
+}
+function relTime(ts) {
+  const d = Date.now() - ts;
+  if (d < 90 * 1000) return 'just now';
+  if (d < 90 * MIN) return Math.round(d / MIN) + ' minutes ago';
+  if (d < 36 * 3600e3) return Math.round(d / 3600e3) + ' hours ago';
+  return plural(Math.round(d / DAY), 'day') + ' ago';
+}
+function ymd(ts = Date.now()) { const d = new Date(ts); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; }
+const safeName = s => (String(s).replace(/[\\/:*?"<>|\u0000-\u001f]+/g, ' ').replace(/\s+/g, ' ').trim() || 'deck').slice(0, 80);
+function debounce(fn, ms) { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; }
+
+/* ---------- time: days roll over at CFG.rollover (default 4am local) ---------- */
+let CFG = { ...DEFAULTS };
+function dayIndex(ts) {
+  const d = new Date(ts - CFG.rollover * 3600e3);
+  return Math.round(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / DAY);
+}
+function dayStart(idx) {
+  const u = new Date(idx * DAY);
+  return new Date(u.getUTCFullYear(), u.getUTCMonth(), u.getUTCDate(), CFG.rollover).getTime();
+}
+
+/* =====================================================================
+   Storage: IndexedDB (preferred) with localStorage fallback
+   ===================================================================== */
+const LSKEY = 'flashcards.v1';
+function idbOpen() {
+  return new Promise((res, rej) => {
+    if (!window.indexedDB) return rej(new Error('IndexedDB not available'));
+    const r = indexedDB.open('flashcards', 1);
+    r.onupgradeneeded = () => {
+      const db = r.result;
+      db.createObjectStore('decks', { keyPath: 'id' });
+      db.createObjectStore('cards', { keyPath: 'id' });
+      db.createObjectStore('meta', { keyPath: 'key' });
+    };
+    r.onsuccess = () => res(r.result);
+    r.onerror = () => rej(r.error);
+    r.onblocked = () => rej(new Error('IndexedDB blocked'));
+  });
+}
+function withTimeout(p, ms) { return Promise.race([p, new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), ms))]); }
+function idbTx(db, stores, mode, fn) {
+  return new Promise((res, rej) => {
+    const tx = db.transaction(stores, mode);
+    fn(...[].concat(stores).map(s => tx.objectStore(s)));
+    tx.oncomplete = () => res();
+    tx.onerror = () => rej(tx.error);
+    tx.onabort = () => rej(tx.error || new Error('Transaction aborted'));
+  });
+}
+function idbAll(db, store) {
+  return new Promise((res, rej) => {
+    const r = db.transaction(store).objectStore(store).getAll();
+    r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error);
+  });
+}
+function lsOK() { try { localStorage.setItem('fc.t', '1'); localStorage.removeItem('fc.t'); return true; } catch (e) { return false; } }
+function lsRead() { try { const s = localStorage.getItem(LSKEY); return s ? JSON.parse(s) : null; } catch (e) { return null; } }
+
+const Store = {
+  kind: 'memory', db: null, lsTimer: 0, failed: false,
+  async init() {
+    for (let i = 0; i < 2 && this.kind !== 'indexeddb'; i++) {
+      try { this.attach(await withTimeout(idbOpen(), 4000)); this.kind = 'indexeddb'; } catch (e) { console.warn('IndexedDB:', e); }
+    }
+    if (this.kind !== 'indexeddb') this.kind = lsOK() ? 'localstorage' : 'memory';
+  },
+  attach(db) { this.db = db; db.onclose = () => { this.db = null; }; db.onversionchange = () => { db.close(); this.db = null; }; },
+  async handle() { if (!this.db) this.attach(await idbOpen()); return this.db; },
+  async run(stores, fn) {
+    try { await idbTx(await this.handle(), stores, 'readwrite', fn); }
+    catch (e) {
+      if (e && e.name === 'InvalidStateError') { this.db = null; await idbTx(await this.handle(), stores, 'readwrite', fn); }
+      else throw e;
+    }
+  },
+  fail(e) { console.error(e); if (!Store.failed) { Store.failed = true; toast('Could not save to device storage: ' + (e && e.message || e)); } },
+  async load() {
+    if (this.kind === 'indexeddb') {
+      const db = await this.handle();
+      let [decks, cards, meta] = await Promise.all(['decks', 'cards', 'meta'].map(s => idbAll(db, s)));
+      meta = Object.fromEntries(meta.map(m => [m.key, m.value]));
+      // If an earlier launch had to fall back to localStorage, migrate that data in.
+      const ls = lsRead();
+      if (ls && Array.isArray(ls.decks)) {
+        const dk = new Set(decks.map(d => d.id)), ck = new Set(cards.map(c => c.id));
+        const nd = ls.decks.filter(d => !dk.has(d.id)), nc = (ls.cards || []).filter(c => !ck.has(c.id));
+        await this.run(['decks', 'cards', 'meta'], (D, C, M) => {
+          nd.forEach(d => D.put(d)); nc.forEach(c => C.put(c));
+          for (const k in (ls.meta || {})) if (!(k in meta)) M.put({ key: k, value: ls.meta[k] });
+        });
+        decks = decks.concat(nd); cards = cards.concat(nc); meta = { ...(ls.meta || {}), ...meta };
+        try { localStorage.removeItem(LSKEY); } catch (e) {}
+      }
+      return { decks, cards, meta };
+    }
+    if (this.kind === 'localstorage') { const d = lsRead() || {}; return { decks: d.decks || [], cards: d.cards || [], meta: d.meta || {} }; }
+    return { decks: [], cards: [], meta: {} };
+  },
+  put(store, objs) {
+    objs = [].concat(objs); if (!objs.length) return;
+    if (this.kind === 'indexeddb') this.run(store, os => objs.forEach(o => os.put(o))).catch(e => this.fail(e));
+    else this.lsSave();
+  },
+  del(store, ids) {
+    ids = [].concat(ids); if (!ids.length) return;
+    if (this.kind === 'indexeddb') this.run(store, os => ids.forEach(id => os.delete(id))).catch(e => this.fail(e));
+    else this.lsSave();
+  },
+  putMeta(key, value) {
+    if (this.kind === 'indexeddb') this.run('meta', os => os.put({ key, value })).catch(e => this.fail(e));
+    else this.lsSave();
+  },
+  async replaceAll(decks, cards, meta) {
+    if (this.kind === 'indexeddb') {
+      await this.run(['decks', 'cards', 'meta'], (D, C, M) => {
+        D.clear(); C.clear(); M.clear();
+        decks.forEach(d => D.put(d)); cards.forEach(c => C.put(c));
+        for (const k in meta) M.put({ key: k, value: meta[k] });
+      });
+    } else this.lsFlush();
+  },
+  lsSave() { if (this.kind !== 'localstorage') return; clearTimeout(this.lsTimer); this.lsTimer = setTimeout(() => this.lsFlush(), 300); },
+  lsFlush() {
+    if (this.kind !== 'localstorage') return;
+    clearTimeout(this.lsTimer);
+    try { localStorage.setItem(LSKEY, JSON.stringify({ decks: [...S.decks.values()], cards: [...S.cards.values()], meta: S.meta })); }
+    catch (e) { this.fail(e); }
+  },
+};
+
+/* =====================================================================
+   App state (in memory; every change is written through to Store)
+   ===================================================================== */
+const S = { decks: new Map(), cards: new Map(), meta: {} };
+function applySettings() {
+  const s = S.meta.settings || {};
+  CFG = { ...DEFAULTS, ...s };
+  if (!Array.isArray(CFG.learn)) CFG.learn = DEFAULTS.learn;
+  if (!Array.isArray(CFG.relearn)) CFG.relearn = DEFAULTS.relearn;
+}
+function setMeta(k, v) { S.meta[k] = v; Store.putMeta(k, v); }
+const flushTouch = debounce(() => Store.putMeta('lastChange', S.meta.lastChange), 1500);
+function touch() {
+  S.meta.lastChange = Date.now();
+  if (!S.meta.firstData) setMeta('firstData', Date.now());
+  flushTouch();
+}
+function saveCards(cards) { cards = [].concat(cards); const now = Date.now(); for (const c of cards) { c.mod = now; S.cards.set(c.id, c); } Store.put('cards', cards); touch(); }
+function saveDeck(d) { S.decks.set(d.id, d); Store.put('decks', d); touch(); }
+function removeCards(ids) { ids.forEach(id => S.cards.delete(id)); Store.del('cards', ids); touch(); }
+function removeDeck(id) { removeCards(cardsIn(id).map(c => c.id)); S.decks.delete(id); Store.del('decks', id); }
+function cardsIn(deckId) { const out = []; for (const c of S.cards.values()) if (c.deckId === deckId) out.push(c); return out; }
+function sortedDecks() { return [...S.decks.values()].sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' })); }
+function nextOrd(n = 1) { const s = S.meta.seq || 0; setMeta('seq', s + n); return s; }
+function newDeck(name) {
+  const d = { id: uid(), name: name.trim() || 'Untitled', created: Date.now(), newPerDay: NEW_PER_DAY, dirs: 'f', newDay: -1, newCount: 0 };
+  saveDeck(d); return d;
+}
+function makeCard(deckId, front, back, ord) { const t = Date.now(); return { id: uid(), deckId, front, back, ord, created: t, mod: t }; }
+
+/* =====================================================================
+   Scheduler — Anki-style SM-2
+   A card can be studied front→back ('f') and/or back→front ('r'); each
+   direction has its own state: {t, due, ivl, ease, step, reps, lapses, last}
+   t: 0 new · 1 learning · 2 review · 3 relearning
+   due: ms timestamp for learning/relearning, day index for review.
+   ===================================================================== */
+function dirsOf(deck) { return deck.dirs === 'fr' ? ['f', 'r'] : deck.dirs === 'r' ? ['r'] : ['f']; }
+function newUsed(deck, today) { return deck.newDay === today ? deck.newCount : 0; }
+function newLeft(deck, today) { return Math.max(0, (deck.newPerDay ?? NEW_PER_DAY) - newUsed(deck, today)); }
+function isBuried(card, dir, deck, today) {
+  // With both directions on, a card's sibling waits until tomorrow once one side was studied today.
+  if (deck.dirs !== 'fr') return false;
+  const sib = card[dir === 'f' ? 'r' : 'f'];
+  return !!(sib && sib.last && dayIndex(sib.last) === today);
+}
+function hardDelay(steps, step) {
+  if (step === 0 && steps.length > 1) return (steps[0] + steps[1]) / 2;
+  if (step === 0) return Math.min(steps[0] * 1.5, steps[0] + 1440);
+  return steps[step];
+}
+function fuzzRange(ivl) {
+  let d = 1;
+  for (const [a, b, f] of [[2.5, 7, .15], [7, 20, .1], [20, Infinity, .05]]) d += f * Math.max(Math.min(ivl, b) - a, 0);
+  return [Math.round(ivl - d), Math.round(ivl + d)];
+}
+function fuzz(ivl, min) {
+  if (ivl < 2.5) return ivl;
+  let [lo, hi] = fuzzRange(ivl);
+  lo = Math.max(lo, min, 2); hi = Math.min(Math.max(hi, lo), MAX_IVL);
+  return lo + Math.floor(Math.random() * (hi - lo + 1));
+}
+// Returns {st, label}. btn: 1 again · 2 hard · 3 good · 4 easy.
+function schedule(prev, btn, now, doFuzz) {
+  const today = dayIndex(now);
+  const s = prev ? { ...prev } : { t: NEW, ivl: 0, ease: START_EASE, step: 0, reps: 0, lapses: 0 };
+  s.reps = (s.reps || 0) + 1; s.last = now;
+  const fz = (x, min) => doFuzz ? fuzz(x, min) : x;
+  const learnAt = mins => { s.due = now + Math.round(mins * MIN); return { st: s, label: fmtMins(mins) }; };
+  const toReview = ivl => {
+    ivl = Math.max(1, Math.min(MAX_IVL, Math.round(ivl)));
+    s.t = REV; s.step = 0; s.ivl = ivl; s.due = today + ivl;
+    return { st: s, label: fmtDays(ivl) };
+  };
+  if (s.t === NEW) { s.t = LRN; s.step = 0; s.ease = START_EASE; }
+  if (s.t === LRN || s.t === RLN) {
+    const steps = s.t === LRN ? CFG.learn : CFG.relearn;
+    const goodIvl = s.t === LRN ? CFG.grad : Math.max(1, s.ivl || 1);
+    const easyIvl = s.t === LRN ? Math.max(CFG.easy, goodIvl) : goodIvl + 1;
+    if (!steps.length) return toReview(btn === 4 ? fz(easyIvl, 1) : fz(goodIvl, 1));
+    s.step = Math.min(s.step || 0, steps.length - 1);
+    if (btn === 1) { s.step = 0; return learnAt(steps[0]); }
+    if (btn === 2) return learnAt(hardDelay(steps, s.step));
+    if (btn === 3) {
+      if (s.step + 1 < steps.length) { s.step++; return learnAt(steps[s.step]); }
+      return toReview(fz(goodIvl, 1));
+    }
+    return toReview(fz(easyIvl, 1));
+  }
+  // review
+  const ivl = Math.max(1, s.ivl || 1), E = s.ease || START_EASE, late = Math.max(0, today - s.due);
+  if (btn === 1) {
+    s.lapses = (s.lapses || 0) + 1; s.ease = Math.max(MIN_EASE, E - 0.2); s.ivl = 1;
+    if (CFG.relearn.length) { s.t = RLN; s.step = 0; return learnAt(CFG.relearn[0]); }
+    return toReview(1);
+  }
+  const hard = Math.min(MAX_IVL, Math.max(Math.floor(ivl * HARD_MULT), ivl + 1));
+  const good = Math.min(MAX_IVL, Math.max(Math.floor((ivl + Math.floor(late / 2)) * E), hard + 1));
+  const easy = Math.min(MAX_IVL, Math.max(Math.floor((ivl + late) * E * EASY_BONUS), good + 1));
+  if (btn === 2) { s.ease = Math.max(MIN_EASE, E - 0.15); return toReview(fz(hard, ivl + 1)); }
+  if (btn === 3) return toReview(fz(good, hard + 1));
+  s.ease = E + 0.15; return toReview(fz(easy, good + 1));
+}
+
+// Everything the deck list, overview and study queue need, in one pass.
+function collect(deck, now = Date.now()) {
+  const today = dayIndex(now), eod = dayStart(today + 1), dirs = dirsOf(deck);
+  const o = { today, revs: [], news: [], lrn: [], total: 0, nNew: 0, nLrn: 0, nRev: 0, nextDue: null, lrnToday: 0 };
+  const picked = new Set();
+  const cards = cardsIn(deck.id).sort((a, b) => (a.ord - b.ord) || (a.created - b.created));
+  for (const card of cards) {
+    o.total++;
+    for (const dir of dirs) {
+      const st = card[dir], t = st ? st.t : NEW;
+      if (t === NEW) {
+        o.nNew++;
+        if (!picked.has(card.id) && !isBuried(card, dir, deck, today)) { picked.add(card.id); o.news.push({ card, dir }); }
+      } else if (t === LRN || t === RLN) {
+        o.nLrn++; o.lrn.push({ card, dir }); if (st.due < eod) o.lrnToday++;
+      } else {
+        o.nRev++;
+        if (st.due <= today) { if (!isBuried(card, dir, deck, today)) o.revs.push({ card, dir }); }
+        else if (o.nextDue === null || st.due < o.nextDue) o.nextDue = st.due;
+      }
+    }
+  }
+  o.newLeft = newLeft(deck, today);
+  o.newShow = Math.min(o.news.length, o.newLeft);
+  o.due = o.revs.length + o.lrnToday;
+  return o;
+}
+// Spread new cards evenly among reviews.
+function mix(revs, news) {
+  const out = []; let r = 0, n = 0; const R = revs.length, N = news.length;
+  while (r < R || n < N) {
+    if (n < N && (r >= R || (n + 1) / (N + 1) <= (r + 1) / (R + 1))) out.push(news[n++]); else out.push(revs[r++]);
+  }
+  return out;
+}
+
+/* =====================================================================
+   CSV
+   ===================================================================== */
+function parseCSV(text, delim) {
+  const rows = []; let row = [], field = '', inQ = false, quoted = false, i = 0;
+  const n = text.length;
+  while (i < n) {
+    const c = text[i];
+    if (inQ) {
+      if (c === '"') { if (text[i + 1] === '"') { field += '"'; i += 2; continue; } inQ = false; i++; continue; }
+      if (c === '\r') { field += '\n'; i += text[i + 1] === '\n' ? 2 : 1; continue; }
+      field += c; i++; continue;
+    }
+    if (c === '"' && !quoted && field.trim() === '') { inQ = true; quoted = true; field = ''; i++; continue; }
+    if (c === delim) { row.push(field); field = ''; quoted = false; i++; continue; }
+    if (c === '\n' || c === '\r') {
+      row.push(field); rows.push(row); row = []; field = ''; quoted = false;
+      i += (c === '\r' && text[i + 1] === '\n') ? 2 : 1; continue;
+    }
+    field += c; i++;
+  }
+  if (field !== '' || quoted || row.length) { row.push(field); rows.push(row); }
+  return rows.filter(r => r.some(f => f.trim() !== ''));
+}
+function detectDelim(text) {
+  const sample = text.slice(0, 50000);
+  let best = ',', bestScore = -1;
+  for (const d of [',', ';', '\t', '|']) {
+    const rows = parseCSV(sample, d).slice(0, 30);
+    if (!rows.length) continue;
+    const freq = new Map(); rows.forEach(r => freq.set(r.length, (freq.get(r.length) || 0) + 1));
+    let mode = 1, mc = 0; for (const [k, v] of freq) if (v > mc || (v === mc && k > mode)) { mode = k; mc = v; }
+    if (mode < 2) continue;
+    const score = (mc / rows.length) * 100 + Math.min(mode, 8);
+    if (score > bestScore) { bestScore = score; best = d; }
+  }
+  return best;
+}
+const HEADER_RX = /^(front|back|question|answer|term|terms|definition|word|words|meaning|translation|prompt|response|side ?[12ab]|card ?(front|back)|notes?|example|pregunta|respuesta|anverso|reverso|frente|dorso|t[eé]rmino|definici[oó]n|palabra|significado|traducci[oó]n?|ejemplo|resposta|paraula|frage|antwort|wort|bedeutung|[uü]bersetzung|vorderseite|r[uü]ckseite|english|spanish|espa[nñ]ol|catal[aà]n?|german|deutsch|hungarian|magyar|french|fran[cç]ais|italian|italiano)$/i;
+function guessHeader(rows) {
+  if (rows.length < 2) return false;
+  const first = rows[0].map(s => s.trim()).filter(Boolean);
+  const hits = first.filter(s => HEADER_RX.test(s)).length;
+  return hits >= Math.min(2, first.length);
+}
+function decodeBytes(buf) {
+  const b = new Uint8Array(buf);
+  if (b[0] === 0xFF && b[1] === 0xFE) return { text: new TextDecoder('utf-16le').decode(b.subarray(2)), enc: 'UTF-16' };
+  if (b[0] === 0xFE && b[1] === 0xFF) return { text: new TextDecoder('utf-16be').decode(b.subarray(2)), enc: 'UTF-16' };
+  try { return { text: new TextDecoder('utf-8', { fatal: true }).decode(b), enc: 'UTF-8' }; }
+  catch (e) { return { text: new TextDecoder('windows-1252').decode(b), enc: 'Windows-1252 (not UTF-8)' }; }
+}
+function csvField(s, d) {
+  s = String(s ?? '');
+  return (/["\r\n]/.test(s) || s.includes(d) || /^\s|\s$/.test(s)) ? '"' + s.replace(/"/g, '""') + '"' : s;
+}
+function toCSV(rows, d = ',') { return '﻿' + rows.map(r => r.map(f => csvField(f, d)).join(d)).join('\r\n') + '\r\n'; }
+
+/* =====================================================================
+   Files out: Share sheet (Save to Files) or download fallback
+   ===================================================================== */
+async function shareOrDownload(name, text, type) {
+  const file = new File([text], name, { type });
+  if (navigator.canShare && navigator.share) {
+    let can = false; try { can = navigator.canShare({ files: [file] }); } catch (e) {}
+    if (can) {
+      try { await navigator.share({ files: [file] }); return true; }
+      catch (e) { if (e && e.name === 'AbortError') return false; }
+    }
+  }
+  const url = URL.createObjectURL(file);
+  const a = h('a', { href: url, download: name, style: 'display:none' });
+  document.body.append(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 60000);
+  return true;
+}
+function readFileBytes(file) {
+  if (file.arrayBuffer) return file.arrayBuffer();
+  return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = () => rej(r.error); r.readAsArrayBuffer(file); });
+}
+
+/* =====================================================================
+   Backups
+   ===================================================================== */
+function backupJSON() {
+  return JSON.stringify({
+    app: 'flashcards', format: 1, version: VERSION, exportedAt: new Date().toISOString(),
+    settings: S.meta.settings || {}, seq: S.meta.seq || 0,
+    decks: [...S.decks.values()], cards: [...S.cards.values()],
+  });
+}
+// Must run straight from a tap (no awaits before share) so iOS allows the Share sheet.
+async function backupNow() {
+  const ok = await shareOrDownload(`flashcards-backup-${ymd()}.json`, backupJSON(), 'application/json');
+  if (!ok) return;
+  setMeta('lastBackup', Date.now());
+  toast('Backup created. Keep it in Files or iCloud Drive.');
+  render(true);
+}
+function backupStatus() {
+  const now = Date.now(), last = S.meta.lastBackup || 0, changed = S.meta.lastChange || 0;
+  const base = last || S.meta.firstData || now;
+  const remind = S.cards.size > 0 && changed > last && now - base > BACKUP_EVERY && !((S.meta.snooze || 0) > now);
+  return { last, remind };
+}
+function num(v, d) { v = Number(v); return Number.isFinite(v) ? v : d; }
+function cleanState(s) {
+  if (!s || typeof s !== 'object') return undefined;
+  const t = [NEW, LRN, REV, RLN].includes(s.t) ? s.t : NEW;
+  if (t === NEW) return undefined;
+  return { t, due: num(s.due, 0), ivl: num(s.ivl, 0), ease: Math.max(MIN_EASE, num(s.ease, START_EASE)), step: num(s.step, 0), reps: num(s.reps, 0), lapses: num(s.lapses, 0), last: num(s.last, 0) };
+}
+function sanitizeBackup(o) {
+  if (!o || !Array.isArray(o.decks) || !Array.isArray(o.cards)) throw new Error('This is not a Flashcards backup file.');
+  const decks = o.decks.filter(d => d && typeof d.id === 'string' && typeof d.name === 'string').map(d => ({
+    id: d.id, name: d.name, created: num(d.created, Date.now()), newPerDay: Math.max(0, num(d.newPerDay, NEW_PER_DAY)),
+    dirs: ['f', 'r', 'fr'].includes(d.dirs) ? d.dirs : 'f', newDay: num(d.newDay, -1), newCount: num(d.newCount, 0),
+  }));
+  const ids = new Set(decks.map(d => d.id));
+  let maxOrd = -1;
+  const cards = o.cards.filter(c => c && typeof c.id === 'string' && ids.has(c.deckId) && typeof c.front === 'string' && typeof c.back === 'string').map(c => {
+    const x = { id: c.id, deckId: c.deckId, front: c.front, back: c.back, ord: num(c.ord, 0), created: num(c.created, 0), mod: num(c.mod, 0) };
+    maxOrd = Math.max(maxOrd, x.ord);
+    for (const d of ['f', 'r']) { const st = cleanState(c[d]); if (st) x[d] = st; }
+    return x;
+  });
+  const settings = (o.settings && typeof o.settings === 'object') ? o.settings : {};
+  return { decks, cards, settings, seq: Math.max(num(o.seq, 0), maxOrd + 1) };
+}
+async function restoreFrom(file) {
+  let data;
+  try { data = sanitizeBackup(JSON.parse(decodeBytes(await readFileBytes(file)).text)); }
+  catch (e) { return alertBox('Can’t restore', e instanceof SyntaxError ? 'That file isn’t valid JSON.' : e.message); }
+  const ok = await confirmBox('Replace all data?',
+    `The backup has ${plural(data.decks.length, 'deck')} and ${plural(data.cards.length, 'card')}. Everything currently in the app will be replaced.`, 'Replace', true);
+  if (!ok) return;
+  const now = Date.now();
+  const meta = { ...S.meta, settings: data.settings, seq: data.seq, lastChange: now, lastBackup: now, firstData: S.meta.firstData || now };
+  S.decks = new Map(data.decks.map(d => [d.id, d])); S.cards = new Map(data.cards.map(c => [c.id, c])); S.meta = meta;
+  applySettings();
+  try { await Store.replaceAll(data.decks, data.cards, meta); } catch (e) { return Store.fail(e); }
+  toast(`Restored ${plural(data.cards.length, 'card')}.`);
+  go('/', { replace: true });
+}
+
+/* =====================================================================
+   UI plumbing: toast, modal, router
+   ===================================================================== */
+let toastTimer;
+function toast(msg, action) {
+  const t = $('#toast'); t.replaceChildren(h('span', null, msg));
+  if (action) t.append(h('button', { onclick: () => { t.classList.remove('show'); action.fn(); } }, action.label));
+  t.classList.add('show'); clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), action ? 8000 : 3200);
+}
+let openModals = 0;
+function modal({ title, body, actions = [], extra, onDismiss }) {
+  const close = () => { ov.remove(); openModals--; document.removeEventListener('keydown', onKey); };
+  const onKey = e => { if (e.key === 'Escape') { close(); onDismiss && onDismiss(); } };
+  const ov = h('div', { class: 'overlay', onclick: e => { if (e.target === ov) { close(); onDismiss && onDismiss(); } } },
+    h('div', { class: 'sheet', role: 'dialog', 'aria-modal': 'true', 'aria-label': title || 'Dialog' },
+      title && h('h2', { class: 'sheet-title' }, title), body,
+      actions.length && h('div', { class: 'sheet-actions' }, actions.map(a =>
+        h('button', { class: 'btn' + (a.primary ? '' : ' sec') + (a.danger ? ' red' : ''), onclick: () => a.onClick(close) }, a.label))),
+      extra && h('div', { class: 'sheet-extra' }, extra(close))));
+  document.body.append(ov); openModals++; document.addEventListener('keydown', onKey);
+  const f = ov.querySelector('[autofocus]'); if (f) setTimeout(() => f.focus(), 50);
+  return { close };
+}
+function confirmBox(title, msg, okLabel = 'OK', danger = false) {
+  return new Promise(res => modal({
+    title, body: h('p', { class: 'sheet-msg' }, msg), onDismiss: () => res(false),
+    actions: [{ label: 'Cancel', onClick: c => { c(); res(false); } }, { label: okLabel, primary: true, danger, onClick: c => { c(); res(true); } }],
+  }));
+}
+function alertBox(title, msg) {
+  return new Promise(res => modal({ title, body: h('p', { class: 'sheet-msg' }, msg), onDismiss: res, actions: [{ label: 'OK', primary: true, onClick: c => { c(); res(); } }] }));
+}
+function promptBox(title, value, okLabel = 'Save') {
+  return new Promise(res => {
+    const inp = h('input', { type: 'text', value, autofocus: true, autocomplete: 'off', enterkeyhint: 'done' });
+    const m = modal({
+      title, body: h('label', { class: 'field' }, inp), onDismiss: () => res(null),
+      actions: [{ label: 'Cancel', onClick: c => { c(); res(null); } }, { label: okLabel, primary: true, onClick: c => { c(); res(inp.value.trim()); } }],
+    });
+    inp.addEventListener('keydown', e => { if (e.key === 'Enter') { m.close(); res(inp.value.trim()); } });
+  });
+}
+
+const app = $('#app');
+let lastRoute = null;
+function route() { return (location.hash || '#/').slice(1) || '/'; }
+function go(path, { replace = false } = {}) {
+  const d = (history.state && history.state.d) || 0;
+  if (replace) history.replaceState({ d }, '', '#' + path);
+  else history.pushState({ d: d + 1 }, '', '#' + path);
+  render();
+}
+function back(parent) { if (history.state && history.state.d > 0) history.back(); else go(parent, { replace: true }); }
+window.addEventListener('popstate', () => render());
+
+function render(keepScroll) {
+  const r = route(); let m;
+  stopStudyTimer();
+  let el;
+  if (r === '/') el = Home();
+  else if ((m = r.match(/^\/deck\/([^/]+)$/))) el = DeckView(decodeURIComponent(m[1]));
+  else if ((m = r.match(/^\/deck\/([^/]+)\/cards$/))) el = BrowseView(decodeURIComponent(m[1]));
+  else if ((m = r.match(/^\/study\/([^/]+)$/))) el = StudyView(decodeURIComponent(m[1]));
+  else if ((m = r.match(/^\/import(?:\/([^/]+))?$/))) el = ImportView(m[1] && decodeURIComponent(m[1]));
+  else if (r === '/settings') el = SettingsView();
+  else el = Home();
+  const y = window.scrollY;
+  app.replaceChildren(el);
+  document.body.classList.toggle('studying', r.startsWith('/study/'));
+  const tab = r.startsWith('/import') ? '/import' : r === '/settings' ? '/settings' : '/';
+  document.querySelectorAll('#tabbar button').forEach(b => b.classList.toggle('on', b.dataset.tab === tab));
+  if (keepScroll === true && r === lastRoute) window.scrollTo(0, y); else window.scrollTo(0, 0);
+  lastRoute = r;
+}
+document.querySelectorAll('#tabbar button').forEach(b => b.addEventListener('click', () => {
+  if (route() === b.dataset.tab) return window.scrollTo({ top: 0, behavior: 'smooth' });
+  go(b.dataset.tab);
+}));
+
+function page({ title, back: onBack, backLabel, right, large, flat }, ...content) {
+  return h('div', { class: 'page' },
+    h('header', { class: 'nav' + (flat ? ' flat' : '') },
+      h('div', { class: 'nav-in' },
+        h('div', { class: 'nav-l' }, onBack && h('button', { class: 'navbtn back', onclick: onBack, 'aria-label': 'Back' }, icon('back'), backLabel || 'Back')),
+        h('div', { class: 'nav-t' }, large ? '' : title),
+        h('div', { class: 'nav-r' }, right || null))),
+    h('main', { class: 'content' }, large && h('h1', { class: 'large' }, title), ...content));
+}
+const section = (title, ...rows) => [title && h('div', { class: 'sh' }, title), h('div', { class: 'list' }, ...rows)];
+const foot = text => h('p', { class: 'foot' }, text);
+function navRow(label, { value, onClick, cls, sub } = {}) {
+  return h('button', { class: 'row ' + (cls || ''), onclick: onClick },
+    h('div', { class: 'row-main' }, h('div', { class: 'row-title' }, label), sub && h('div', { class: 'row-sub' }, sub)),
+    value != null && h('span', { class: 'row-val' }, value), !cls && icon('chev', 'chev'));
+}
+
+/* =====================================================================
+   Screens
+   ===================================================================== */
+function Home() {
+  const decks = sortedDecks();
+  const bs = backupStatus();
+  const banner = bs.remind && h('div', { class: 'banner', role: 'alert' },
+    h('div', { class: 'banner-text' }, h('strong', null, 'Time to back up'),
+      bs.last ? `Your last backup was ${relTime(bs.last)}. ` : 'You haven’t made a backup yet. ',
+      'iOS can clear website data, so keep a copy in Files.'),
+    h('div', { class: 'banner-actions' },
+      h('button', { class: 'btn small', onclick: backupNow }, 'Back up now'),
+      h('button', { class: 'linkbtn', onclick: () => { setMeta('snooze', Date.now() + DAY); render(true); } }, 'Tomorrow')));
+  const right = decks.length ? h('button', { class: 'navbtn', onclick: backupNow, 'aria-label': 'Back up now' }, icon('backup'), 'Back up') : null;
+  if (!decks.length) {
+    return page({ title: 'Decks', large: true, right, flat: true },
+      h('div', { class: 'empty' },
+        h('div', { class: 'empty-art' }, h('img', { src: ICON_SRC, alt: '' })),
+        h('div', { class: 'big' }, 'No decks yet'),
+        h('p', null, 'Import a CSV from Files or paste one in to create your first deck.')),
+      h('div', { style: 'max-width:360px;margin:8px auto 0' },
+        h('button', { class: 'btn', onclick: () => go('/import') }, 'Import CSV'),
+        h('button', { class: 'btn sec', onclick: () => go('/settings') }, 'Restore a backup')));
+  }
+  let totalDue = 0, totalNew = 0;
+  const rows = decks.map(d => {
+    const st = collect(d); totalDue += st.due; totalNew += st.newShow;
+    return h('button', { class: 'row deck-row', onclick: () => go('/deck/' + encodeURIComponent(d.id)) },
+      h('div', { class: 'row-main' }, h('div', { class: 'row-title' }, d.name), h('div', { class: 'row-sub' }, plural(st.total, 'card'))),
+      h('div', { class: 'counts' },
+        h('span', { class: 'cnt new' + (st.newShow ? '' : ' zero') }, h('b', null, st.newShow), h('small', null, 'new')),
+        h('span', { class: 'cnt due' + (st.due ? '' : ' zero') }, h('b', null, st.due), h('small', null, 'due'))),
+      icon('chev', 'chev'));
+  });
+  return page({ title: 'Decks', large: true, right, flat: true },
+    banner || null,
+    h('div', { class: 'list' }, rows),
+    foot(totalDue + totalNew ? `${totalDue} due and ${totalNew} new across all decks today.` : 'All caught up for today.'));
+}
+
+function DeckView(id) {
+  const d = S.decks.get(id);
+  if (!d) return page({ title: 'Not found', back: () => go('/', { replace: true }), backLabel: 'Decks' }, foot('This deck no longer exists.'));
+  const st = collect(d);
+  const canStudy = st.newShow + st.due > 0;
+  const morenew = st.newLeft === 0 && st.news.length > 0;
+  let note = '';
+  if (!canStudy) {
+    if (st.total === 0) note = 'This deck is empty. Add or import some cards.';
+    else if (st.lrn.length) note = 'Learning cards will be back later today.';
+    else if (st.nextDue != null) note = `Done for today. Next reviews ${st.nextDue - st.today === 1 ? 'tomorrow' : 'in ' + plural(st.nextDue - st.today, 'day')}.`;
+    else note = 'Done for today.';
+  }
+  const stat = (n, label, cls) => h('div', { class: 'stat ' + cls + (n ? '' : ' zero') }, h('b', null, n), h('span', null, label));
+  const npd = h('input', { type: 'number', inputmode: 'numeric', min: 0, max: 9999, value: d.newPerDay ?? NEW_PER_DAY, 'aria-label': 'New cards per day',
+    onchange: e => setNew(e.target.value) });
+  const setNew = v => { v = Math.max(0, Math.min(9999, Math.round(num(v, NEW_PER_DAY)))); d.newPerDay = v; saveDeck(d); render(true); };
+  const segBtn = (val, label) => h('button', { class: d.dirs === val || (!d.dirs && val === 'f') ? 'on' : '', 'aria-pressed': String(d.dirs === val),
+    onclick: () => { if (d.dirs === val) return; d.dirs = val; saveDeck(d); render(true); } }, label);
+  return page({ title: d.name, back: () => back('/'), backLabel: 'Decks' },
+    h('div', { class: 'hero' },
+      h('div', { class: 'stats' }, stat(st.newShow, 'New', 'new'), stat(st.lrnToday, 'Learning', 'lrn'), stat(st.revs.length, 'To review', 'rev')),
+      h('button', { class: 'btn', disabled: !canStudy && !morenew ? true : false, onclick: () => {
+        if (!canStudy && morenew) extendNew(d, 10);
+        go('/study/' + encodeURIComponent(d.id));
+      } }, canStudy ? 'Study now' : morenew ? 'Study 10 more new cards' : 'Study now'),
+      note && h('div', { class: 'hero-note' }, note)),
+    section('Cards',
+      navRow('Browse & edit', { value: st.total, onClick: () => go(`/deck/${encodeURIComponent(d.id)}/cards`) }),
+      h('button', { class: 'row blue', onclick: () => editCard(null, d.id) }, icon('plus'), h('div', { class: 'row-main' }, 'Add card'))),
+    foot(`${plural(st.total, 'card')} · ${st.nNew} new · ${st.nLrn} learning · ${st.nRev} in review` + (d.dirs === 'fr' ? ' (counted per direction)' : '')),
+    section('Options',
+      h('div', { class: 'row' }, h('div', { class: 'row-main' }, 'New cards per day'),
+        h('div', { class: 'stepper' },
+          h('button', { 'aria-label': 'Fewer', onclick: () => setNew((d.newPerDay ?? NEW_PER_DAY) - 5) }, '−'), npd,
+          h('button', { 'aria-label': 'More', onclick: () => setNew((d.newPerDay ?? NEW_PER_DAY) + 5) }, '+'))),
+      h('div', { class: 'row col' }, h('div', null, 'Study direction'),
+        h('div', { class: 'seg', role: 'group' }, segBtn('f', 'Front → Back'), segBtn('r', 'Back → Front'), segBtn('fr', 'Both')))),
+    foot('Each direction keeps its own schedule, so switching to Back → Front or Both starts those as new cards. With Both, a card’s other direction waits until the next day after you study one side.'),
+    section('Transfer',
+      navRow('Import CSV into this deck', { onClick: () => go('/import/' + encodeURIComponent(d.id)) }),
+      navRow('Export deck as CSV', { onClick: () => exportDeckCSV(d) })),
+    section(null,
+      h('button', { class: 'row blue', onclick: async () => { const n = await promptBox('Rename deck', d.name); if (n) { d.name = n; saveDeck(d); render(true); } } }, h('div', { class: 'row-main' }, 'Rename deck')),
+      h('button', { class: 'row red', onclick: async () => {
+        if (await confirmBox(`Delete “${d.name}”?`, `This permanently deletes the deck and its ${plural(st.total, 'card')}, including review history.`, 'Delete', true)) {
+          removeDeck(d.id); toast('Deck deleted'); go('/', { replace: true });
+        }
+      } }, h('div', { class: 'row-main' }, 'Delete deck'))));
+}
+function extendNew(deck, n) {
+  const today = dayIndex(Date.now());
+  if (deck.newDay !== today) { deck.newDay = today; deck.newCount = 0; }
+  deck.newCount -= n; saveDeck(deck);
+}
+function exportDeckCSV(d) {
+  const cards = cardsIn(d.id).sort((a, b) => (a.ord - b.ord) || (a.created - b.created));
+  shareOrDownload(safeName(d.name) + '.csv', toCSV([['front', 'back'], ...cards.map(c => [c.front, c.back])]), 'text/csv');
+}
+
+function cardStatus(card, deck) {
+  const today = dayIndex(Date.now()); let best = null;
+  for (const dir of dirsOf(deck)) {
+    const st = card[dir];
+    if (!st) continue;
+    if (st.t === LRN || st.t === RLN) return { text: 'Learning', cls: 'lrn' };
+    if (best === null || st.due < best) best = st.due;
+  }
+  if (best === null) return { text: 'New', cls: 'new' };
+  if (best <= today) return { text: 'Due', cls: 'due' };
+  return { text: 'in ' + fmtDays(best - today), cls: '' };
+}
+function BrowseView(id) {
+  const d = S.decks.get(id);
+  if (!d) return page({ title: 'Not found', back: () => go('/', { replace: true }), backLabel: 'Decks' });
+  const all = cardsIn(d.id).sort((a, b) => (a.ord - b.ord) || (a.created - b.created));
+  const listEl = h('div', { class: 'list' });
+  const info = h('p', { class: 'foot' });
+  let q = BrowseView.q && BrowseView.q.id === id ? BrowseView.q.text : '', limit = 100;
+  const draw = () => {
+    const nq = norm(q.trim());
+    const hits = nq ? all.filter(c => norm(c.front).includes(nq) || norm(c.back).includes(nq)) : all;
+    listEl.replaceChildren(...hits.slice(0, limit).map(c => {
+      const s = cardStatus(c, d);
+      return h('button', { class: 'row card-row', onclick: () => editCard(c, d.id) },
+        h('div', { class: 'row-main' }, h('div', { class: 'row-title' }, plain(c.front) || '—'), h('div', { class: 'row-sub' }, plain(c.back))),
+        h('span', { class: 'tag ' + s.cls }, s.text));
+    }));
+    listEl.hidden = !hits.length;
+    info.replaceChildren(hits.length ? `${plural(hits.length, 'card')}${nq ? ' found' : ''}` : (nq ? 'No matching cards.' : 'No cards yet.'),
+      hits.length > limit ? h('button', { class: 'linkbtn', onclick: () => { limit += 200; draw(); } }, ' Show more') : '');
+  };
+  const input = h('input', { type: 'search', placeholder: 'Search front or back', value: q, autocomplete: 'off', autocorrect: 'off', spellcheck: 'false',
+    oninput: debounce(e => { q = e.target.value; BrowseView.q = { id, text: q }; limit = 100; draw(); }, 120) });
+  draw();
+  return page({ title: 'Cards', back: () => back('/deck/' + encodeURIComponent(id)), backLabel: 'Deck',
+    right: h('button', { class: 'navbtn', 'aria-label': 'Add card', onclick: () => editCard(null, d.id) }, icon('plus')) },
+    h('div', { class: 'search' }, h('label', null, icon('search'), input)), listEl, info);
+}
+
+function stateText(st) {
+  if (!st) return 'new';
+  const today = dayIndex(Date.now());
+  if (st.t === LRN || st.t === RLN) return (st.t === RLN ? 'relearning' : 'learning') + (st.due > Date.now() ? ', next in ' + fmtMins((st.due - Date.now()) / MIN) : ', due now');
+  const dd = st.due - today;
+  return `interval ${fmtDays(st.ivl)}, ease ${Math.round(st.ease * 100)}%, ${dd <= 0 ? 'due' : 'due in ' + fmtDays(dd)}` + (st.lapses ? `, ${plural(st.lapses, 'lapse')}` : '');
+}
+// Add (card = null) or edit a card. onSaved is called after changes.
+function editCard(card, deckId, onSaved) {
+  const isNew = !card;
+  const front = h('textarea', { rows: 3, autofocus: isNew, autocapitalize: 'sentences' }); front.value = card ? card.front : '';
+  const backT = h('textarea', { rows: 3, autocapitalize: 'sentences' }); backT.value = card ? card.back : '';
+  const deckSel = h('select', null, sortedDecks().map(x => h('option', { value: x.id, selected: x.id === (card ? card.deckId : deckId) }, x.name)));
+  const err = h('div', { class: 'err', hidden: true });
+  const deck = S.decks.get(card ? card.deckId : deckId);
+  const status = card && h('div', { class: 'status-line' },
+    dirsOf(deck).map(dir => h('div', null, (dir === 'f' ? 'Front → Back: ' : 'Back → Front: ') + stateText(card[dir]))));
+  const done = () => { onSaved ? onSaved() : render(true); };
+  const validate = () => {
+    const f = clean(front.value), b = clean(backT.value), did = deckSel.value;
+    if (!f || !b) { err.textContent = 'Both sides need some text.'; err.hidden = false; return null; }
+    const dup = cardsIn(did).some(c => c !== card && c.front === f && c.back === b);
+    if (dup) { err.textContent = 'An identical card already exists in that deck.'; err.hidden = false; return null; }
+    return { f, b, did };
+  };
+  const save = (close, again) => {
+    const v = validate(); if (!v) return;
+    if (isNew) { saveCards(makeCard(v.did, v.f, v.b, nextOrd())); toast('Card added'); }
+    else { card.front = v.f; card.back = v.b; card.deckId = v.did; saveCards(card); }
+    if (again) { front.value = ''; backT.value = ''; err.hidden = true; front.focus(); done(); return; }
+    close(); done();
+  };
+  modal({
+    title: isNew ? 'Add card' : 'Edit card',
+    body: h('div', null, status,
+      h('label', { class: 'field' }, h('span', null, 'Front'), front),
+      h('label', { class: 'field' }, h('span', null, 'Back'), backT),
+      h('label', { class: 'field' }, h('span', null, 'Deck'), deckSel), err),
+    actions: [{ label: 'Cancel', onClick: c => c() }, { label: isNew ? 'Add' : 'Save', primary: true, onClick: c => save(c, false) }],
+    extra: close => isNew
+      ? [h('span'), h('button', { onclick: () => save(close, true) }, 'Add & next')]
+      : [h('button', { onclick: async () => {
+          if (await confirmBox('Reset progress?', 'The card will be treated as new again.', 'Reset', true)) { delete card.f; delete card.r; saveCards(card); close(); done(); }
+        } }, 'Reset progress'),
+        h('button', { class: 'red', onclick: async () => {
+          if (await confirmBox('Delete card?', 'This can’t be undone.', 'Delete', true)) { removeCards([card.id]); close(); done(); toast('Card deleted'); }
+        } }, 'Delete card')],
+  });
+}
+
+/* ---------- Study ---------- */
+let SESS = null, studyTimer = 0;
+function stopStudyTimer() { clearTimeout(studyTimer); studyTimer = 0; }
+function startSession(deck) {
+  const c = collect(deck);
+  const revs = c.revs.map(it => ({ ...it, k: Math.random() })).sort((a, b) => (a.card[a.dir].due - b.card[b.dir].due) || (a.k - b.k));
+  return { deckId: deck.id, order: mix(revs, c.news.slice(0, c.newShow)), pos: 0, cur: null, revealed: false, undo: [], done: 0, waitUntil: null };
+}
+function nextItem(sess) {
+  const deck = S.decks.get(sess.deckId), now = Date.now(), today = dayIndex(now), dirs = dirsOf(deck);
+  let best = null, bestDue = Infinity, ahead = null, aheadDue = Infinity;
+  for (const card of cardsIn(deck.id)) for (const dir of dirs) {
+    const st = card[dir];
+    if (!st || (st.t !== LRN && st.t !== RLN)) continue;
+    if (st.due <= now) { if (st.due < bestDue) { best = { card, dir }; bestDue = st.due; } }
+    else if (st.due < aheadDue) { ahead = { card, dir }; aheadDue = st.due; }
+  }
+  if (best) return best;
+  while (sess.pos < sess.order.length) {
+    const it = sess.order[sess.pos], card = S.cards.get(it.card.id);
+    if (card && card.deckId === deck.id && dirs.includes(it.dir) && !isBuried(card, it.dir, deck, today)) {
+      const st = card[it.dir], t = st ? st.t : NEW;
+      if ((t === REV && st.due <= today) || (t === NEW && newLeft(deck, today) > 0)) return { card, dir: it.dir, fromOrder: true };
+    }
+    sess.pos++;
+  }
+  sess.waitUntil = ahead ? aheadDue : null;
+  if (ahead && aheadDue <= now + LEARN_AHEAD) return ahead;
+  return null;
+}
+function queueCounts(sess) {
+  const deck = S.decks.get(sess.deckId), now = Date.now(), today = dayIndex(now), eod = dayStart(today + 1), dirs = dirsOf(deck);
+  let n = 0, l = 0, r = 0, nl = newLeft(deck, today);
+  for (const card of cardsIn(deck.id)) for (const dir of dirs) { const st = card[dir]; if (st && (st.t === LRN || st.t === RLN) && st.due < eod) l++; }
+  for (let i = sess.pos; i < sess.order.length; i++) {
+    const it = sess.order[i], card = S.cards.get(it.card.id);
+    if (!card || card.deckId !== deck.id || isBuried(card, it.dir, deck, today)) continue;
+    const st = card[it.dir];
+    if (!st) { if (n < nl) n++; } else if (st.t === REV && st.due <= today) r++;
+  }
+  return { n, l, r };
+}
+function StudyView(id) {
+  const deck = S.decks.get(id);
+  if (!deck) { setTimeout(() => go('/', { replace: true })); return h('div'); }
+  if (!SESS || SESS.deckId !== id || lastRoute !== route()) SESS = startSession(deck);
+  const sess = SESS;
+  const root = h('div', { class: 'study' });
+  const close = () => { SESS = null; back('/deck/' + encodeURIComponent(id)); };
+
+  const draw = () => {
+    stopStudyTimer();
+    if (!sess.cur) { sess.cur = nextItem(sess); sess.revealed = false; }
+    const cur = sess.cur, cnt = queueCounts(sess);
+    const curQ = cur ? (cur.card[cur.dir] ? (cur.card[cur.dir].t === REV ? 'r' : 'l') : 'n') : '';
+    const undoBtn = h('button', { class: 'navbtn', 'aria-label': 'Undo', disabled: !sess.undo.length, onclick: undo }, icon('undo'));
+    const top = h('header', { class: 'study-top' },
+      h('div', { class: 'nav-l' }, h('button', { class: 'navbtn', 'aria-label': 'Close', onclick: close }, icon('close'))),
+      h('div', { class: 'qcounts', 'aria-label': `${cnt.n} new, ${cnt.l} learning, ${cnt.r} to review` },
+        h('span', { class: 'n' + (curQ === 'n' ? ' cur' : '') }, cnt.n), h('span', { class: 'l' + (curQ === 'l' ? ' cur' : '') }, cnt.l), h('span', { class: 'r' + (curQ === 'r' ? ' cur' : '') }, cnt.r)),
+      h('div', { class: 'nav-r' },
+        cur && h('button', { class: 'navbtn', 'aria-label': 'Edit card', onclick: () => editCard(cur.card, deck.id, () => { if (!S.cards.has(cur.card.id) || cur.card.deckId !== deck.id) sess.cur = null; draw(); }) }, icon('edit')),
+        undoBtn));
+    let body, bottom;
+    if (!cur) {
+      const today = dayIndex(Date.now());
+      const more = cardsIn(deck.id).some(c => dirsOf(deck).some(dir => !c[dir] && !isBuried(c, dir, deck, today)));
+      const wait = sess.waitUntil;
+      body = h('div', { class: 'done' },
+        h('div', { class: 'done-mark' }, icon('check')),
+        h('div', { class: 'big' }, wait ? 'Done for now' : 'Done for today'),
+        h('p', null, (sess.done ? `You studied ${plural(sess.done, 'card')}. ` : '') +
+          (wait ? `More learning cards in ${fmtMins(Math.max(1, (wait - Date.now()) / MIN))}.` : 'Come back tomorrow for more reviews.')),
+        h('div', { style: 'max-width:340px;margin:0 auto' },
+          h('button', { class: 'btn', onclick: close }, 'Back to deck'),
+          more && newLeft(deck, today) === 0 && h('button', { class: 'btn sec', onclick: () => { extendNew(deck, 10); sess.order = startSession(deck).order; sess.pos = 0; draw(); } }, 'Study 10 more new cards')));
+      if (wait) studyTimer = setTimeout(draw, Math.max(1000, wait - LEARN_AHEAD - Date.now() + 500));
+      bottom = null;
+    } else {
+      const qText = cur.dir === 'f' ? cur.card.front : cur.card.back;
+      const aText = cur.dir === 'f' ? cur.card.back : cur.card.front;
+      const long = (qText + aText).length > 160 || /\n/.test(qText + aText);
+      const card = h('div', { class: 'fcard' + (long ? ' long' : '') + (sess.revealed ? ' revealed' : ''), role: 'button', tabindex: 0,
+        'aria-label': sess.revealed ? 'Card' : 'Show answer', onclick: () => { if (!sess.revealed) reveal(); } },
+        deck.dirs === 'fr' && h('div', { class: 'dir-badge' }, cur.dir === 'f' ? 'Front → Back' : 'Back → Front'),
+        h('div', { class: 'fq', html: rich(qText) }),
+        sess.revealed && h('div', { class: 'fsep' }),
+        sess.revealed && h('div', { class: 'fa', html: rich(aText) }),
+        !sess.revealed && h('div', { class: 'tap-hint' }, 'Tap to reveal'));
+      body = card;
+      if (!sess.revealed) bottom = h('button', { class: 'btn', onclick: reveal }, 'Show answer');
+      else {
+        const now = Date.now(), prev = cur.card[cur.dir];
+        const names = ['Again', 'Hard', 'Good', 'Easy'], cls = ['again', 'hard', 'good', 'easy'];
+        bottom = h('div', { class: 'answers' }, [1, 2, 3, 4].map(b =>
+          h('button', { class: 'ans ' + cls[b - 1], onclick: () => answer(b) }, h('small', null, schedule(prev, b, now, false).label), names[b - 1])));
+      }
+    }
+    root.replaceChildren(top, h('div', { class: 'study-body' }, body), h('footer', { class: 'study-bottom' }, bottom));
+    const sb = root.querySelector('.study-body'); if (sb) sb.scrollTop = 0;
+  };
+  const reveal = () => { sess.revealed = true; draw(); };
+  const answer = btn => {
+    const cur = sess.cur; if (!cur || !sess.revealed) return;
+    const deckNow = S.decks.get(sess.deckId), now = Date.now(), today = dayIndex(now);
+    const prev = cur.card[cur.dir] ? { ...cur.card[cur.dir] } : null;
+    sess.undo.push({ cur, prev, pos: sess.pos, done: sess.done, newDay: deckNow.newDay, newCount: deckNow.newCount });
+    if (sess.undo.length > 30) sess.undo.shift();
+    cur.card[cur.dir] = schedule(prev, btn, now, true).st;
+    if (!prev) { if (deckNow.newDay !== today) { deckNow.newDay = today; deckNow.newCount = 0; } deckNow.newCount++; saveDeck(deckNow); }
+    if (cur.fromOrder) sess.pos++;
+    sess.done++; saveCards(cur.card);
+    sess.cur = null; draw();
+  };
+  const undo = () => {
+    const u = sess.undo.pop(); if (!u) return;
+    const deckNow = S.decks.get(sess.deckId);
+    if (u.prev) u.cur.card[u.cur.dir] = u.prev; else delete u.cur.card[u.cur.dir];
+    deckNow.newDay = u.newDay; deckNow.newCount = u.newCount; saveDeck(deckNow);
+    saveCards(u.cur.card);
+    sess.pos = u.pos; sess.done = u.done; sess.cur = u.cur; sess.revealed = false;
+    draw();
+  };
+  StudyView.keys = e => {
+    if (openModals || !route().startsWith('/study/')) return;
+    if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+    if ((e.key === ' ' || e.key === 'Enter') && e.target.closest && e.target.closest('button,[role=button]:not(.fcard)')) return;
+    if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); if (!sess.cur) return; if (!sess.revealed) reveal(); else answer(3); }
+    else if (/^[1-4]$/.test(e.key) && sess.revealed) answer(+e.key);
+    else if (e.key === 'z' || e.key === 'u') undo();
+    else if (e.key === 'Escape') close();
+  };
+  draw();
+  return root;
+}
+document.addEventListener('keydown', e => StudyView.keys && StudyView.keys(e));
+document.addEventListener('visibilitychange', () => { if (!document.hidden && route().startsWith('/study/') && SESS && !SESS.cur) render(); });
+
+/* ---------- Import ---------- */
+const IMP = { text: '', name: '', enc: '', delim: 'auto', header: null, front: 0, back: 1, target: 'new', newName: '', result: null, pasteOpen: false, memo: null };
+function impParse() {
+  const delim = IMP.delim === 'auto' ? detectDelim(IMP.text) : IMP.delim;
+  if (!IMP.memo || IMP.memo.text !== IMP.text || IMP.memo.delim !== delim) IMP.memo = { text: IMP.text, delim, rows: parseCSV(IMP.text, delim) };
+  const rows = IMP.memo.rows;
+  const header = IMP.header ?? guessHeader(rows);
+  const ncols = rows.reduce((m, r) => Math.max(m, r.length), 0);
+  return { delim, rows, header, ncols, data: header ? rows.slice(1) : rows };
+}
+function loadImportText(text, name, enc) {
+  IMP.text = text.replace(/^﻿/, ''); IMP.name = name; IMP.enc = enc; IMP.delim = 'auto'; IMP.header = null;
+  IMP.front = 0; IMP.back = 1; IMP.result = null; IMP.memo = null;
+  IMP.newName = name.replace(/\.(csv|tsv|txt)$/i, '') || 'New deck';
+  const p = impParse();
+  if (p.header && p.rows[0]) {
+    const hdr = p.rows[0].map(s => norm(s.trim()));
+    const fi = hdr.findIndex(s => /^(front|question|term|word|pregunta|anverso|frente|frage)$/.test(s));
+    const bi = hdr.findIndex(s => /^(back|answer|definition|meaning|translation|respuesta|reverso|dorso|antwort|bedeutung)$/.test(s));
+    if (fi >= 0) IMP.front = fi; if (bi >= 0 && bi !== IMP.front) IMP.back = bi;
+  }
+  render(true);
+}
+function ImportView(deckId) {
+  if (!IMP.text && !IMP.result) IMP.target = deckId && S.decks.has(deckId) ? deckId : 'new';
+  if (IMP.target !== 'new' && !S.decks.has(IMP.target)) IMP.target = 'new';
+  const backFn = deckId ? () => back('/deck/' + encodeURIComponent(deckId)) : null;
+  const pg = (...c) => page({ title: 'Import', large: !deckId, back: backFn, backLabel: 'Deck', flat: !deckId }, ...c);
+
+  if (IMP.result) {
+    const r = IMP.result, d = S.decks.get(r.deckId);
+    const skipped = [r.dup && plural(r.dup, 'duplicate'), r.empty && `${plural(r.empty, 'row')} with an empty side`].filter(Boolean);
+    return pg(h('div', { class: 'result' },
+      h('div', { class: 'done-mark' }, icon('check')),
+      h('div', { class: 'big', style: 'margin-top:14px' }, `Imported ${plural(r.added, 'card')}`),
+      h('p', null, (d ? `into “${d.name}”. ` : '') + (skipped.length ? 'Skipped ' + skipped.join(' and ') + '.' : 'Nothing was skipped.')),
+      d && r.added > 0 && h('button', { class: 'btn', onclick: () => { IMP.result = null; go('/study/' + encodeURIComponent(d.id), { replace: true }); } }, 'Study now'),
+      d && h('button', { class: 'btn sec', onclick: () => { IMP.result = null; go('/deck/' + encodeURIComponent(d.id), { replace: true }); } }, 'Open deck'),
+      h('button', { class: 'btn sec', onclick: () => { IMP.result = null; render(); } }, 'Import another file')));
+  }
+
+  const fileInput = h('input', { type: 'file', accept: '.csv,.tsv,.txt,text/csv,text/plain,text/tab-separated-values,text/comma-separated-values,application/csv', 'aria-label': 'Choose CSV file',
+    onchange: async e => {
+      const f = e.target.files && e.target.files[0]; e.target.value = '';
+      if (!f) return;
+      try { const { text, enc } = decodeBytes(await readFileBytes(f)); loadImportText(text, f.name, enc); }
+      catch (err) { alertBox('Can’t read file', String(err && err.message || err)); }
+    } });
+  const pasteArea = h('textarea', { class: 'paste', placeholder: 'front,back\nhola,hello\n"multi\nline",ok', spellcheck: 'false', autocapitalize: 'off', autocorrect: 'off' });
+  const source = [
+    h('label', { class: 'btn filebtn' }, 'Choose CSV from Files', fileInput),
+    IMP.pasteOpen
+      ? h('div', { style: 'margin-top:14px' }, h('label', { class: 'field' }, h('span', null, 'Paste CSV text'), pasteArea),
+          h('button', { class: 'btn sec', onclick: () => { if (!pasteArea.value.trim()) return pasteArea.focus(); IMP.pasteOpen = false; loadImportText(pasteArea.value, 'Pasted cards', 'pasted'); } }, 'Preview pasted text'))
+      : h('button', { class: 'btn sec', onclick: () => { IMP.pasteOpen = true; render(true); setTimeout(() => $('.paste') && $('.paste').focus(), 30); } }, 'Paste text instead'),
+  ];
+  if (!IMP.text) {
+    return pg(source,
+      foot('Commas, semicolons and tabs are detected automatically. Quoted fields can contain commas and line breaks. Each row becomes a card; you pick which columns are the front and back.'));
+  }
+
+  const p = impParse();
+  const delimNames = { ',': 'Comma', ';': 'Semicolon', '\t': 'Tab', '|': 'Pipe' };
+  const colName = i => (p.header && p.rows[0] && p.rows[0][i] && p.rows[0][i].trim()) || `Column ${i + 1}`;
+  if (IMP.front >= p.ncols) IMP.front = 0;
+  if (IMP.back >= p.ncols) IMP.back = Math.min(1, p.ncols - 1);
+  const colSel = (key) => h('select', { onchange: e => { IMP[key] = +e.target.value; render(true); } },
+    Array.from({ length: p.ncols }, (_, i) => h('option', { value: i, selected: IMP[key] === i }, colName(i))));
+  const prevRows = p.data.slice(0, 6);
+  const table = h('div', { class: 'preview' }, h('table', null,
+    h('thead', null, h('tr', null, Array.from({ length: p.ncols }, (_, i) => h('th', null, colName(i),
+      i === IMP.front && h('span', { class: 'pill f' }, 'FRONT'), i === IMP.back && h('span', { class: 'pill b' }, 'BACK'))))),
+    h('tbody', null, prevRows.map(r => h('tr', null, Array.from({ length: p.ncols }, (_, i) =>
+      h('td', { class: i === IMP.front ? 'f' : i === IMP.back ? 'b' : '' }, (r[i] || '').length > 140 ? r[i].slice(0, 140) + '…' : (r[i] || ''))))))));
+
+  // what would happen
+  let ok = 0, empty = 0, dup = 0;
+  const existing = new Set(IMP.target !== 'new' ? cardsIn(IMP.target).map(c => dupKey(c.front, c.back)) : []);
+  for (const r of p.data) {
+    const f = clean(r[IMP.front]), b = clean(r[IMP.back]);
+    if (!f || !b) { empty++; continue; }
+    const k = dupKey(f, b); if (existing.has(k)) { dup++; continue; } existing.add(k); ok++;
+  }
+  const problems = p.ncols < 2 ? 'Only one column found. Check the separator below; each row needs a front and a back.' : IMP.front === IMP.back ? 'Front and back are the same column.' : '';
+  const nameInput = h('input', { type: 'text', value: IMP.newName, oninput: e => { IMP.newName = e.target.value; } });
+  const targetSel = h('select', { onchange: e => { IMP.target = e.target.value; render(true); } },
+    h('option', { value: 'new', selected: IMP.target === 'new' }, 'New deck…'),
+    sortedDecks().map(d => h('option', { value: d.id, selected: IMP.target === d.id }, d.name)));
+
+  return pg(
+    h('div', { class: 'list' },
+      h('div', { class: 'row' }, h('div', { class: 'row-main' }, h('div', { class: 'row-title' }, IMP.name), h('div', { class: 'row-sub' }, `${plural(p.data.length, 'row')} · ${IMP.enc}`)),
+        h('button', { class: 'linkbtn', onclick: () => { IMP.text = ''; IMP.memo = null; render(); } }, 'Change'))),
+    section('Columns',
+      h('label', { class: 'row' }, h('div', { class: 'row-main' }, 'Front'), colSel('front'), icon('updown', 'updown')),
+      h('label', { class: 'row' }, h('div', { class: 'row-main' }, 'Back'), colSel('back'), icon('updown', 'updown')),
+      h('button', { class: 'row blue', disabled: p.ncols < 2, onclick: () => { [IMP.front, IMP.back] = [IMP.back, IMP.front]; render(true); } }, h('div', { class: 'row-main' }, 'Swap front and back'))),
+    h('div', { class: 'sh' }, 'Preview'), table,
+    problems ? h('div', { class: 'err' }, problems) : h('p', { class: 'foot' }, `Showing ${prevRows.length} of ${plural(p.data.length, 'row')}.`),
+    section('Format',
+      h('label', { class: 'row check' }, h('div', { class: 'row-main' }, 'First row is a header'),
+        h('span', { class: 'switch' }, h('input', { type: 'checkbox', checked: p.header, onchange: e => { IMP.header = e.target.checked; render(true); } }), h('i'))),
+      h('label', { class: 'row' }, h('div', { class: 'row-main' }, 'Separator'),
+        h('select', { onchange: e => { IMP.delim = e.target.value; render(true); } },
+          h('option', { value: 'auto', selected: IMP.delim === 'auto' }, `Auto (${delimNames[p.delim]})`),
+          Object.entries(delimNames).map(([v, n]) => h('option', { value: v, selected: IMP.delim === v }, n))), icon('updown', 'updown'))),
+    section('Destination',
+      h('label', { class: 'row' }, h('div', { class: 'row-main' }, 'Deck'), targetSel, icon('updown', 'updown')),
+      IMP.target === 'new' && h('label', { class: 'row' }, h('div', { class: 'row-main' }, 'Name'), nameInput)),
+    h('p', { class: 'foot' }, [`${plural(ok, 'card')} will be added.`, dup && ` ${plural(dup, 'duplicate')} will be skipped.`, empty && ` ${plural(empty, 'row')} with an empty side will be skipped.`].filter(Boolean).join('')),
+    h('div', { style: 'margin-top:18px' },
+      h('button', { class: 'btn', disabled: !!problems || ok === 0, onclick: () => doImport(p) }, ok ? `Import ${plural(ok, 'card')}` : 'Nothing to import')));
+}
+function doImport(p) {
+  const deck = IMP.target === 'new' ? null : S.decks.get(IMP.target);
+  const existing = new Set(deck ? cardsIn(deck.id).map(c => dupKey(c.front, c.back)) : []);
+  const pairs = []; let empty = 0, dup = 0;
+  for (const r of p.data) {
+    const f = clean(r[IMP.front]), b = clean(r[IMP.back]);
+    if (!f || !b) { empty++; continue; }
+    const k = dupKey(f, b); if (existing.has(k)) { dup++; continue; }
+    existing.add(k); pairs.push([f, b]);
+  }
+  if (!pairs.length) return;
+  const target = deck || newDeck(IMP.newName || 'Imported');
+  const base = nextOrd(pairs.length);
+  saveCards(pairs.map(([f, b], i) => makeCard(target.id, f, b, base + i)));
+  IMP.result = { deckId: target.id, added: pairs.length, dup, empty };
+  IMP.text = ''; IMP.memo = null; IMP.target = target.id;
+  if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {});
+  render();
+}
+
+/* ---------- Settings ---------- */
+function parseSteps(s) {
+  const out = [];
+  for (const tok of String(s).trim().split(/[\s,]+/).filter(Boolean)) {
+    const m = tok.match(/^(\d+(?:\.\d+)?)(s|m|h|d)?$/i);
+    if (!m) return null;
+    const v = parseFloat(m[1]) * ({ s: 1 / 60, m: 1, h: 60, d: 1440 }[(m[2] || 'm').toLowerCase()]);
+    if (!(v > 0)) return null; out.push(v);
+  }
+  return out;
+}
+const stepsText = a => a.map(m => m % 1440 === 0 ? m / 1440 + 'd' : m % 60 === 0 && m >= 60 ? m / 60 + 'h' : m < 1 ? Math.round(m * 60) + 's' : m + 'm').join(' ');
+function SettingsView() {
+  const bs = backupStatus();
+  const saveSetting = (k, v) => { setMeta('settings', { ...(S.meta.settings || {}), [k]: v }); applySettings(); toast('Saved'); };
+  const stepsInput = (k, allowEmpty) => h('input', { type: 'text', value: stepsText(CFG[k]), autocapitalize: 'off', autocorrect: 'off', spellcheck: 'false',
+    onchange: e => { const v = parseSteps(e.target.value); if (!v || (!v.length && !allowEmpty)) { toast('Use values like “1m 10m”'); e.target.value = stepsText(CFG[k]); return; } saveSetting(k, v); e.target.value = stepsText(v); } });
+  const numInput = (k, min, max) => h('input', { type: 'number', inputmode: 'numeric', min, max, value: CFG[k],
+    onchange: e => { const v = Math.round(num(e.target.value, NaN)); if (!(v >= min && v <= max)) { toast(`Enter ${min}–${max}`); e.target.value = CFG[k]; return; } saveSetting(k, v); } });
+  const restoreInput = h('input', { type: 'file', accept: '.json,application/json', 'aria-label': 'Choose backup file',
+    onchange: e => { const f = e.target.files && e.target.files[0]; e.target.value = ''; if (f) restoreFrom(f); } });
+  const storageLabel = { indexeddb: 'IndexedDB', localstorage: 'localStorage', memory: 'Memory only (not saved!)' }[Store.kind];
+  const persistVal = h('span', { class: 'row-val' }, '…');
+  if (navigator.storage && navigator.storage.persisted) navigator.storage.persisted().then(v => { persistVal.textContent = v ? 'Yes' : 'Not granted'; }).catch(() => { persistVal.textContent = 'Unknown'; });
+  else persistVal.textContent = 'Unsupported';
+  const standalone = navigator.standalone || matchMedia('(display-mode: standalone)').matches;
+
+  return page({ title: 'Settings', large: true, flat: true },
+    section('Backup',
+      h('button', { class: 'row blue', onclick: backupNow }, icon('backup'), h('div', { class: 'row-main' }, 'Back up now'),
+        h('span', { class: 'row-val' }, bs.last ? relTime(bs.last) : 'never')),
+      h('label', { class: 'row blue filebtn' }, h('div', { class: 'row-main' }, 'Restore from backup…'), restoreInput)),
+    foot('Backups are a single .json file. Choose “Save to Files” in the Share sheet. Restoring replaces everything on this device. You’ll be reminded if your last backup is over 7 days old.'),
+    section('Scheduling',
+      h('label', { class: 'row' }, h('div', { class: 'row-main' }, 'Learning steps'), stepsInput('learn', false)),
+      h('label', { class: 'row' }, h('div', { class: 'row-main' }, 'Relearning steps'), stepsInput('relearn', true)),
+      h('label', { class: 'row' }, h('div', { class: 'row-main' }, 'Graduating interval (days)'), numInput('grad', 1, 365)),
+      h('label', { class: 'row' }, h('div', { class: 'row-main' }, 'Easy interval (days)'), numInput('easy', 1, 365)),
+      h('label', { class: 'row' }, h('div', { class: 'row-main' }, 'Next day starts at (hour)'), numInput('rollover', 0, 23)),
+      h('button', { class: 'row blue', onclick: async () => { if (await confirmBox('Reset scheduling?', 'Restore the Anki default values above.', 'Reset')) { setMeta('settings', {}); applySettings(); render(true); } } },
+        h('div', { class: 'row-main' }, 'Restore defaults'))),
+    foot('Defaults match Anki: steps 1m 10m, relearn 10m, graduate after 1 day, easy 4 days, new day at 4 am. New cards per day is set per deck.'),
+    section('Storage',
+      h('div', { class: 'row' }, h('div', { class: 'row-main' }, 'Saved in'), h('span', { class: 'row-val' }, storageLabel)),
+      h('div', { class: 'row' }, h('div', { class: 'row-main' }, 'Persistent storage'), persistVal),
+      h('div', { class: 'row' }, h('div', { class: 'row-main' }, 'Contents'), h('span', { class: 'row-val' }, `${plural(S.decks.size, 'deck')}, ${plural(S.cards.size, 'card')}`))),
+    !standalone && foot('Tip: in Safari, Share → Add to Home Screen, then open it from there. The Home Screen app keeps its own data, separate from Safari tabs.'),
+    section(null,
+      h('button', { class: 'row red', onclick: async () => {
+        if (!await confirmBox('Delete all data?', 'Every deck, card and review history on this device will be erased. Make a backup first if you might want it back.', 'Delete everything', true)) return;
+        S.decks = new Map(); S.cards = new Map(); S.meta = { settings: S.meta.settings || {} };
+        try { await Store.replaceAll([], [], S.meta); } catch (e) { Store.fail(e); }
+        Store.lsFlush(); toast('All data deleted'); go('/', { replace: true });
+      } }, h('div', { class: 'row-main' }, 'Delete all data'))),
+    foot(`Flashcards ${VERSION}. Everything stays on this device: no accounts, no tracking, no network requests.`));
+}
+
+/* =====================================================================
+   Boot
+   ===================================================================== */
+async function boot() {
+  await Store.init();
+  try {
+    const data = await Store.load();
+    data.decks.forEach(d => S.decks.set(d.id, d));
+    data.cards.forEach(c => S.cards.set(c.id, c));
+    S.meta = data.meta || {};
+  } catch (e) { console.error(e); toast('Could not load saved data: ' + e.message); }
+  applySettings();
+  if (!history.state) history.replaceState({ d: 0 }, '', location.hash || '#/');
+  render();
+  if (Store.kind === 'memory') toast('Storage is unavailable here, so nothing will be saved. Is Private Browsing on?');
+  if (Store.kind === 'indexeddb' && S.cards.size && navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {});
+}
+window.addEventListener('pagehide', () => { if (S.meta.lastChange) Store.putMeta('lastChange', S.meta.lastChange); Store.lsFlush(); });
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) { if (S.meta.lastChange) Store.putMeta('lastChange', S.meta.lastChange); Store.lsFlush(); }
+  else if (!route().startsWith('/study/') && !openModals && !(document.activeElement && document.activeElement.matches('input,textarea,select'))) render(true); // refresh due counts after the day changes
+});
+
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+  navigator.serviceWorker.addEventListener('message', e => {
+    if (e.data && e.data.type === 'updated') toast('A new version is ready.', { label: 'Reload', fn: () => location.reload() });
+  });
+}
+boot();
+</script>
+</body>
+</html>
